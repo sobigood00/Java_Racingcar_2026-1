@@ -19,7 +19,7 @@ class ApplicationTest extends NsTest {
                 run("pobi,woni", "1");
                 assertThat(output()).contains("pobi : -", "woni : ", "최종 우승자 : pobi");
             },
-            MOVING_FORWARD, STOP
+            MOVING_FORWARD, STOP //난수 반환 설정
         );
     }
 
