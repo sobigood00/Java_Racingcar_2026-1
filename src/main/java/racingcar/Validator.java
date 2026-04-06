@@ -19,11 +19,11 @@ public class Validator {
         Set<String> equalNames = new HashSet<>(); //자바에서 문자열 중복 검사는 HashSet을 사용하면 편리하다.
         //2. 개별 입력에 대한 검사
         for(String name:nameList){
-            if(name.length() > 5) { //2.1 이름 길이
+            if(name.length() > name_max) { //2.1 이름 길이
                 throw new IllegalArgumentException("자동차 이름은 5자 이하로 입력해주세요.");
             }
             if(name.isBlank() || name.contains(" ")){ //2.2 이름 빈 값/공백
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("자동차 이름을 입력하지 않았습니다.");
             }if(!equalNames.add(name)){ //2.3 이름 중복 검사
                 throw new IllegalArgumentException("자동차 이름은 중복될 수 없습니다.");
             }
