@@ -17,10 +17,26 @@ Car class / Validator class / main(사용자 입출력/게임 실행)
 - 자동차 이름 입력값 검사
 - 횟수 입력값 검사
 
-3. main
+3. Application(main)
 - 사용자로부터 입력받음
 - Validator로 검사
 - Car 객체 생성-> 레이스 동작
 - 결과 출력
+
+
+2주차_리팩토링(주요 변경사항)
+1. Application
+main() 안에 로직이 많음 ->>> 메서드 분리
+- getCarNames(): 이름 입력,검사
+- getTryCount(): 횟수 입력,검사
+- setupCars(String names): 입력받은 이름으로 car 리스트 만듦
+- runRace(List<Car> racingCars, int tryCount): 경주 진행(자동차 움직임, 핵심)
+- void printCarStatus(Car car): 차 위치(position)에 따른 - 출력
+- void printWinners(List<Car> racingCars): 최종 우승자 출력
+- main(): 위의 메서드 사용 -> 실행!
+
+2. Validator
+- int name_max 상수 선언했지만, 사용하지 않았음 -> 사용
+- 이름 검사: 2.2 이름 빈값/공백 감지 시, 메세지 출력하도록 수정
 
 
